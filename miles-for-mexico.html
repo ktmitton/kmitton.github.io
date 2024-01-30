@@ -239,7 +239,8 @@
           tokenClient = google.accounts.oauth2.initTokenClient({
             client_id: CLIENT_ID,
             scope: SCOPES,
-            callback: '', // defined later
+            callback: '', // defined later,
+            use_fedcm_for_prompt: true,
           });
           gisInited = true;
           maybeEnableButtons();
