@@ -1,6 +1,3 @@
-import "google/api";
-import "google/gsi";
-
 /**
  *
  * @param {string} clientId
