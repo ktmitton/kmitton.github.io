@@ -47,20 +47,20 @@
                 <div class="row g-3">
                     <div class="col-12">
                         <div class="form-floating">
-                            <select class="form-select">
+                            <select class="form-select" id="type">
                                 <option>Walk</option>
                                 <option>Run</option>
                                 <option>Rowing</option>
                                 <option>Other</option>
                             </select>
-                            <label for="floatingInput">Name</label>
+                            <label for="type">Type</label>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-floating">
-                            <input type="number" step=".1" class="form-control" id="floatingInput"
+                            <input type="number" step=".1" class="form-control" id="amount"
                                 value="">
-                            <label for="floatingInput">Distance</label>
+                            <label for="amount">Distance</label>
                         </div>
                     </div>
                     <div class="col-6">
@@ -72,17 +72,24 @@
                                         <span>Miles</span>
                                     </div>
                                 </label>
-                                <label class="btn btn-info w-100 h-100 position-absolute toggle-off">
+                                <label class="btn btn-secondary w-100 h-100 position-absolute toggle-off">
                                     <div class="d-flex align-items-center h-100 justify-content-center">Kilometers</div>
                                 </label>
-                                <span class="btn btn-light border border-info rounded position-absolute h-100 toggle-handle"></span>
+                                <span class="btn btn-light border border-light rounded position-absolute h-100 toggle-handle"></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-floating">
-                            <textarea class="form-control"></textarea>
+                            <textarea id="notes" class="form-control"></textarea>
                             <label>Notes</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <div class="form-control p-0 border-0">
+                                <button class="btn btn-primary w-100 h-100" type="button" id="logWorkout">Save Workout</button>
+                            </div>
                         </div>
                     </div>
                 </div>

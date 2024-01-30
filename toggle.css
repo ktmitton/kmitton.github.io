@@ -1,20 +1,20 @@
 @keyframes slideHandleOn {
   0% {
-    left: 0%;
+    left: calc(0% - var(--bs-btn-padding-x));
   }
 
   100% {
-    left: calc(100% - var(--bs-btn-padding-x) * 2 - 2px);
+    left: calc(100% - var(--bs-btn-padding-x));
   }
 }
 
 @keyframes slideHandleOff {
   0% {
-    left: calc(100% - var(--bs-btn-padding-x) * 2);
+    left: calc(100% - var(--bs-btn-padding-x));
   }
 
   100% {
-    left: 0%;
+    left: calc(0% - var(--bs-btn-padding-x));
   }
 }
 
@@ -59,7 +59,7 @@
 }
 
 .toggle .toggle-handle {
-  left: calc(100% - var(--bs-btn-padding-x) * 2 - 2px);
+  left: calc(100% - var(--bs-btn-padding-x));
 }
 
 .toggle .toggle-on {
@@ -73,7 +73,7 @@
 }
 
 .toggle * {
-  animation-duration: .75s;
+  animation-duration: .5s;
 }
 
 .toggle.on .toggle-handle {
@@ -82,7 +82,7 @@
 
 .toggle.off .toggle-handle {
   animation-name: slideHandleOff;
-  left: 0%;
+  left: calc(0% - var(--bs-btn-padding-x));
 }
 
 .toggle.on .toggle-on {

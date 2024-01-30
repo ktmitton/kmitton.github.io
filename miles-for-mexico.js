@@ -83,20 +83,32 @@ await initializeGoogleApiClient(CLIENT_ID, API_KEY, SCOPES, DISCOVERY_DOCS);
 
 const emailAddress = (await gapi.client.oauth2.tokeninfo()).result.email;
 
-const request = {
-  spreadsheetId: "1TgwZSql7rRbP-E7Fs6_jZ2DifwZ82kpnZoV5MfkW_UI",
-  range: "2024!A:E",
-  valueInputOption: "USER_ENTERED",
-  insertDataOption: 'INSERT_ROWS',
-  resource: {
-      "majorDimension": "ROWS",
-      "values": [
-          ["Ken", "Walk", "5", "Miles", "test row"],
-      ]
-  },
-};
-const result = await gapi.client.sheets.spreadsheets.values.append(request);
+document.querySelector("#logWorkout").addEventListener("click", async ({target}) => {
+  target.innerText = "Saving Workout...."
+  target.disabled = true;
 
-debugger;
+  const type = document.querySelector("#type").value;
+  const amount = document.querySelector("#amount").value;
+  const units = document.querySelector(".toggle")?.matches(".off") ? "kilometers" : "miles";
+  const notes = document.querySelector("#notes").value;
+
+  const request = {
+    spreadsheetId: "1TgwZSql7rRbP-E7Fs6_jZ2DifwZ82kpnZoV5MfkW_UI",
+    range: "2024!A:E",
+    valueInputOption: "USER_ENTERED",
+    insertDataOption: 'INSERT_ROWS',
+    resource: {
+        "majorDimension": "ROWS",
+        "values": [
+            [emailAddress, type, amount, units, notes],
+        ]
+    },
+  };
+  const result = await gapi.client.sheets.spreadsheets.values.append(request);
+
+  alert("Workout Saved!");
+
+  target.disabled = false;
+});
 
 export {};
