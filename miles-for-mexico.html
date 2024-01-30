@@ -8,8 +8,9 @@
                 "preact": "https://esm.sh/preact@10.19.2",
                 "preact/": "https://esm.sh/preact@10.19.2/",
                 "preact/signals": "https://esm.sh/@preact/signals@1.2.2",
-                "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact"
-                "kmitton/"
+                "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact",
+                "kmitton/miles-for-mexico": "./toggle.js?v=1",
+                "kmitton/toggle": "./toggle.js?v=1"
             }
         }
     </script>
@@ -28,8 +29,10 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="toggle.css" />
     <script type="text/javascript" src="googleScriptsOnLoadSetup.js"></script>
-    <script type="module" src="milesForMexic.js"></script>
-    <script type="module" src="toggle.js"></script>
+    <script type="module" nonce="03dba264099846ad90c376ba71f61a98">
+        import "kmitton/toggle";
+        import "kmitton/miles-for-mexico";
+    </script>
     <script async defer src="https://apis.google.com/js/api.js" nonce="03dba264099846ad90c376ba71f61a98" onload="globalThis.onGoogleIdentityServicesScriptLoaded()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" nonce="03dba264099846ad90c376ba71f61a98" onload="globalThis.onGoogleApiScriptLoaded()"></script>
 </head>
