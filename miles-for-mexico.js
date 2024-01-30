@@ -81,6 +81,20 @@ const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 
 await initializeGoogleApiClient(CLIENT_ID, API_KEY, SCOPES, DISCOVERY_DOCS);
 
+const request = {
+  spreadsheetId: "1TgwZSql7rRbP-E7Fs6_jZ2DifwZ82kpnZoV5MfkW_UI",
+  range: "2024!A:E",
+  valueInputOption: "USER_ENTERED",
+  insertDataOption: 'INSERT_ROWS',
+  resource: {
+      "majorDimension": "ROWS",
+      "values": [
+          ["Ken", "Walk", "5", "Miles", "test row"],
+      ]
+  },
+};
+const result = await gapi.client.sheets.spreadsheets.values.append(request);
+
 debugger;
 
 export {};
