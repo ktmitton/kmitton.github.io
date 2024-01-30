@@ -76,7 +76,7 @@ await globalThis.loadGoogleScriptsTask;
 
 const CLIENT_ID = "339276363047-k52mkf39fe28d8j13kah8bmtpk0doehl.apps.googleusercontent.com";
 const API_KEY = "AIzaSyCaOkfOlCoiLPrgGUgRF4mYIjGjH-8plw8";
-const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4", "https://www.googleapis.com/discovery/v1/apis/oauth2/v1/rest"];
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 
 await initializeGoogleApiClient(CLIENT_ID, API_KEY, SCOPES, DISCOVERY_DOCS);
