@@ -72,17 +72,6 @@ const initializeGoogleApiClient = (clientId, apiKey, scopes, discoveryDocs) => {
   });
 };
 
-document.addEventListener("click", ({target}) => {
-    const toggle = target.closest(".toggle");
-
-    if (toggle) {
-        const toggleOn = toggle.classList.contains("off");
-
-        toggle.classList.toggle("off", !toggleOn);
-        toggle.classList.toggle("on", toggleOn);
-    }
-});
-
 await globalThis.loadGoogleScriptsTask;
 
 const CLIENT_ID = "339276363047-k52mkf39fe28d8j13kah8bmtpk0doehl.apps.googleusercontent.com";

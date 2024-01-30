@@ -1,0 +1,106 @@
+@keyframes slideHandleOn {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: calc(100% - var(--bs-btn-padding-x) * 2 - 2px);
+  }
+}
+
+@keyframes slideHandleOff {
+  0% {
+    left: calc(100% - var(--bs-btn-padding-x) * 2);
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes slideOffOn {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes slideOffOff {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes slideOnOn {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes slideOnOff {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+.toggle .toggle-handle {
+  left: calc(100% - var(--bs-btn-padding-x) * 2 - 2px);
+}
+
+.toggle .toggle-on {
+  left: 0%;
+  padding-right: 55px;
+}
+
+.toggle .toggle-off {
+  left: 100%;
+  padding-left: 55px;
+}
+
+.toggle * {
+  animation-duration: .75s;
+}
+
+.toggle.on .toggle-handle {
+  animation-name: slideHandleOn;
+}
+
+.toggle.off .toggle-handle {
+  animation-name: slideHandleOff;
+  left: 0%;
+}
+
+.toggle.on .toggle-on {
+  animation-name: slideOnOff;
+  left: 0%;
+}
+
+.toggle.off .toggle-on {
+  animation-name: slideOnOn;
+  left: -100%;
+}
+
+.toggle.on .toggle-off {
+  animation-name: slideOffOff;
+  left: 100%;
+}
+
+.toggle.off .toggle-off {
+  animation-name: slideOffOn;
+  left: 0%;
+}

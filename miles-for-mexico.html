@@ -11,7 +11,7 @@
                 "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact"
             }
         }
-        </script>
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://accounts.google.com/gsi/client https://apis.google.com/" />
@@ -25,110 +25,12 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="toggle.css" />
     <script type="text/javascript" src="googleScriptsOnLoadSetup.js"></script>
-
-    <style>
-        @keyframes slideHandleOn {
-            0% {
-                left: 0%;
-            }
-            100% {
-                left: calc(100% - var(--bs-btn-padding-x) * 2 - 2px);
-            }
-        }
-
-        @keyframes slideHandleOff {
-            0% {
-                left: calc(100% - var(--bs-btn-padding-x) * 2);
-            }
-            100% {
-                left: 0%;
-            }
-        }
-
-        @keyframes slideOffOn {
-            0% {
-                left: 100%;
-            }
-            100% {
-                left: 0%;
-            }
-        }
-
-        @keyframes slideOffOff {
-            0% {
-                left: 0%;
-            }
-            100% {
-                left: 100%;
-            }
-        }
-
-        @keyframes slideOnOn {
-            0% {
-                left: 0%;
-            }
-            100% {
-                left: -100%;
-            }
-        }
-
-        @keyframes slideOnOff {
-            0% {
-                left: -100%;
-            }
-            100% {
-                left: 0%;
-            }
-        }
-
-        .toggle .toggle-handle {
-            left: calc(100% - var(--bs-btn-padding-x) * 2 - 2px);
-        }
-
-        .toggle .toggle-on {
-            left: 0%;
-            padding-right: 55px;
-        }
-
-        .toggle .toggle-off {
-            left: 100%;
-            padding-left: 55px;
-        }
-
-        .toggle * {
-            animation-duration: .75s;
-        }
-
-        .toggle.on .toggle-handle {
-            animation-name: slideHandleOn;
-        }
-
-        .toggle.off .toggle-handle {
-            animation-name: slideHandleOff;
-            left: 0%;
-        }
-
-        .toggle.on .toggle-on {
-            animation-name: slideOnOff;
-            left: 0%;
-        }
-
-        .toggle.off .toggle-on {
-            animation-name: slideOnOn;
-            left: -100%;
-        }
-
-        .toggle.on .toggle-off {
-            animation-name: slideOffOff;
-            left: 100%;
-        }
-
-        .toggle.off .toggle-off {
-            animation-name: slideOffOn;
-            left: 0%;
-        }
-    </style>
+    <script type="module" src="milesForMexic.js"></script>
+    <script type="module" src="toggle.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
 </head>
 
 <body>
@@ -183,11 +85,6 @@
             </form>
         </div>
     </div>
-    <script type="module" src="milesForMexic.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
-
-    <div id="content"></div>
 </body>
 
 </html>
