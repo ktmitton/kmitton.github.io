@@ -75,8 +75,7 @@ const initializeGoogleApiClient = (clientId, apiKey, scopes, discoveryDocs) => {
   });
 };
 
-// await globalThis.loadGoogleScriptsTask;
-debugger;
+await globalThis.loadGoogleScriptsTask;
 
 const CLIENT_ID = "339276363047-k52mkf39fe28d8j13kah8bmtpk0doehl.apps.googleusercontent.com";
 const API_KEY = "AIzaSyCaOkfOlCoiLPrgGUgRF4mYIjGjH-8plw8";
