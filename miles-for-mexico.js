@@ -36,7 +36,7 @@ const getOAuthToken = async (clientId, scopes, prompt = "consent") => {
       callback: (/** @type {{ access_token: string; }} */ tokenResponse) => {
         if (tokenResponse && tokenResponse.access_token) {
           localStorage.setItem("gapiToken", JSON.stringify(tokenResponse));
-          resolve(tokenResponse.access_token);
+          resolve(tokenResponse);
         } else {
           reject(tokenResponse);
         }
