@@ -1,4 +1,4 @@
-globalThis.loadGoogleScripts = new Promise(resolve => {
+globalThis.loadGoogleScriptsTask = new Promise(resolve => {
   let isGoogleApiScriptLoaded = false;
   let isGoogleIdentityServicesScriptLoaded = false;
 
