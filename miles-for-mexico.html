@@ -9,7 +9,9 @@
                 "preact/": "https://esm.sh/preact@10.19.2/",
                 "preact/signals": "https://esm.sh/@preact/signals@1.2.2",
                 "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact",
-                "kmitton/miles-for-mexico": "./toggle.js?v=1",
+                "google/api": "https://apis.google.com/js/api.js",
+                "google/gsi": "https://accounts.google.com/gsi/client",
+                "kmitton/miles-for-mexico": "./miles-for-mexico.js?v=1",
                 "kmitton/toggle": "./toggle.js?v=1"
             }
         }
@@ -33,8 +35,6 @@
         import "kmitton/toggle";
         import "kmitton/miles-for-mexico";
     </script>
-    <script async defer src="https://apis.google.com/js/api.js" onload="globalThis.onGoogleIdentityServicesScriptLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="globalThis.onGoogleApiScriptLoaded()"></script>
 </head>
 
 <body>

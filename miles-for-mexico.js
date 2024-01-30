@@ -1,3 +1,6 @@
+import "google/api";
+import "google/gsi";
+
 /**
  *
  * @param {string} clientId
@@ -72,7 +75,8 @@ const initializeGoogleApiClient = (clientId, apiKey, scopes, discoveryDocs) => {
   });
 };
 
-await globalThis.loadGoogleScriptsTask;
+// await globalThis.loadGoogleScriptsTask;
+debugger;
 
 const CLIENT_ID = "339276363047-k52mkf39fe28d8j13kah8bmtpk0doehl.apps.googleusercontent.com";
 const API_KEY = "AIzaSyCaOkfOlCoiLPrgGUgRF4mYIjGjH-8plw8";
