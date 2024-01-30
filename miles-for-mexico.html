@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" onload="alert('window')">
+<html lang="en">
 
 <head>
     <script type="importmap">
@@ -9,12 +9,13 @@
                 "preact/": "https://esm.sh/preact@10.19.2/",
                 "preact/signals": "https://esm.sh/@preact/signals@1.2.2",
                 "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact"
+                "kmitton/"
             }
         }
     </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/client https://apis.google.com/" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-03dba264099846ad90c376ba71f61a98' https://accounts.google.com/gsi/client https://apis.google.com/" />
     <meta http-equiv="Content-Security-Policy" content="frame-src https://content.googleapis.com/" />
     <meta http-equiv="Content-Security-Policy" content="connect-src https://accounts.google.com/gsi/" />
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
@@ -29,8 +30,8 @@
     <script type="text/javascript" src="googleScriptsOnLoadSetup.js"></script>
     <script type="module" src="milesForMexic.js"></script>
     <script type="module" src="toggle.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js" onload="alert('api'); globalThis.onGoogleIdentityServicesScriptLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="alert('gsi'); globalThis.onGoogleApiScriptLoaded()"></script>
+    <script async defer src="https://apis.google.com/js/api.js" nonce="03dba264099846ad90c376ba71f61a98" onload="globalThis.onGoogleIdentityServicesScriptLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" nonce="03dba264099846ad90c376ba71f61a98" onload="globalThis.onGoogleApiScriptLoaded()"></script>
 </head>
 
 <body>
