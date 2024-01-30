@@ -8,7 +8,7 @@ const getCachedOAuthToken = async (clientId, scopes) => {
   const cachedToken = localStorage.getItem("gapiToken");
 
   if (cachedToken !== null) {
-    return cachedToken;
+    return JSON.parse(cachedToken);
   }
 
   return await getOAuthToken(clientId, scopes);
@@ -35,7 +35,7 @@ const getOAuthToken = async (clientId, scopes, prompt = "consent") => {
       scope: scopes.join(" "),
       callback: (/** @type {{ access_token: string; }} */ tokenResponse) => {
         if (tokenResponse && tokenResponse.access_token) {
-          localStorage.setItem("gapiToken", tokenResponse.access_token);
+          localStorage.setItem("gapiToken", JSON.stringify(tokenResponse.access_token));
           resolve(tokenResponse.access_token);
         } else {
           reject(tokenResponse);
