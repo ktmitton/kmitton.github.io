@@ -20,7 +20,7 @@ const getCachedOAuthToken = async (clientId, scopes) => {
  * @param {string[]} scopes
  * @returns
  */
-const refreshOAuthToken = (clientId, scopes) => getOAuthToken(clientId, scopes, "");
+const refreshOAuthToken = (clientId, scopes) => getOAuthToken(clientId, scopes);
 
 /**
  *
@@ -28,7 +28,7 @@ const refreshOAuthToken = (clientId, scopes) => getOAuthToken(clientId, scopes, 
  * @param {string[]} scopes
  * @returns
  */
-const getOAuthToken = async (clientId, scopes, prompt = "consent") => {
+const getOAuthToken = async (clientId, scopes) => {
   return await new Promise((resolve, reject) => {
     const tokenClient = google.accounts.oauth2.initTokenClient({
       client_id: clientId,
@@ -43,7 +43,7 @@ const getOAuthToken = async (clientId, scopes, prompt = "consent") => {
       },
     });
 
-    tokenClient.requestAccessToken({prompt});
+    tokenClient.requestAccessToken();
   });
 };
 
@@ -62,7 +62,7 @@ const initializeGoogleApiClient = (clientId, apiKey, scopes, discoveryDocs) => {
         apiKey,
         discoveryDocs,
       });
-      const token = await getCachedOAuthToken(clientId, scopes);
+      const token = await getOAuthToken(clientId, scopes);
 
       await initTask;
       gapi.client.setToken(token);
@@ -84,7 +84,7 @@ await initializeGoogleApiClient(CLIENT_ID, API_KEY, SCOPES, DISCOVERY_DOCS);
 const emailAddress = (await gapi.client.oauth2.tokeninfo()).result.email;
 
 document.querySelector("#logWorkout").addEventListener("click", async ({target}) => {
-  target.innerText = "Saving Workout...."
+  target.innerText = "Saving Workout..."
   target.disabled = true;
 
   const type = document.querySelector("#type").value;
@@ -94,13 +94,13 @@ document.querySelector("#logWorkout").addEventListener("click", async ({target})
 
   const request = {
     spreadsheetId: "1TgwZSql7rRbP-E7Fs6_jZ2DifwZ82kpnZoV5MfkW_UI",
-    range: "2024!A:E",
+    range: "2024!A:F",
     valueInputOption: "USER_ENTERED",
     insertDataOption: 'INSERT_ROWS',
     resource: {
         "majorDimension": "ROWS",
         "values": [
-            [emailAddress, type, amount, units, notes],
+            [new Date(), emailAddress, type, amount, units, notes],
         ]
     },
   };
@@ -108,6 +108,7 @@ document.querySelector("#logWorkout").addEventListener("click", async ({target})
 
   alert("Workout Saved!");
 
+  target.innerText = "Save Workout"
   target.disabled = false;
 });
 
